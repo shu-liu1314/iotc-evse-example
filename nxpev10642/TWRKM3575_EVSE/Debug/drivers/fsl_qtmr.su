@@ -1,0 +1,14 @@
+../drivers/fsl_clock.h:632:20:CLOCK_EnableClock	24	static
+../drivers/fsl_clock.h:643:20:CLOCK_DisableClock	24	static
+../drivers/fsl_qtmr.c:41:17:QTMR_GetInstance	24	static
+../drivers/fsl_qtmr.c:67:6:QTMR_Init	16	static
+../drivers/fsl_qtmr.c:94:6:QTMR_Deinit	16	static
+../drivers/fsl_qtmr.c:120:6:QTMR_GetDefaultConfig	16	static
+../drivers/fsl_qtmr.c:159:10:QTMR_SetupPwm	48	static
+../drivers/fsl_qtmr.c:231:6:QTMR_SetupInputCapture	32	static
+../drivers/fsl_qtmr.c:271:6:QTMR_EnableInterrupts	24	static
+../drivers/fsl_qtmr.c:314:6:QTMR_DisableInterrupts	24	static
+../drivers/fsl_qtmr.c:358:10:QTMR_GetEnabledInterrupts	24	static
+../drivers/fsl_qtmr.c:403:10:QTMR_GetStatus	24	static
+../drivers/fsl_qtmr.c:447:6:QTMR_ClearStatusFlags	24	static
+../drivers/fsl_qtmr.c:498:6:QTMR_SetTimerPeriod	16	static

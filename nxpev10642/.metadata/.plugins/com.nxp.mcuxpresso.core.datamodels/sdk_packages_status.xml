@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk-packages>
+<package hash="1705413024000" path="/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.sdk.sdk_2.x_mimxrt1060-evkb_2.15.0.201911251446/sdks/4ac529dd276ea14f2a2e57571aaf5dc5.zip" schema="manifest-schema/sdk_manifest_v3.14.xsd"/>
+<package hash="1705413028000" path="/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.sdk.sdk_2.x_twr-km35z75m_2.15.0.201911251446/sdks/fe10b21ed8e2bb4cbd6d135d0aa5c41f.zip" schema="manifest-schema/sdk_manifest_v3.14.xsd"/>
+<package hash="1690895212000" path="C:\nxp\MCUXpressoIDE_11.8.1_1197\ide\plugins\com.nxp.mcuxpresso.sdk.sdk_2.x_evk-mimxrt1064_2.14.0.201911251446\sdks\dbaafb69cff6f0c51bffbf7d90c66e1d.zip" schema="manifest-schema/sdk_manifest_v3.13.xsd"/>
+<package hash="1705413020000" path="/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.sdk.sdk_2.x_evk-mimxrt1060_2.15.0.201911251446/sdks/ca0c7ebf2bcb1d27f04bdbcae7d40398.zip" schema="manifest-schema/sdk_manifest_v3.14.xsd"/>
+<package hash="1690895186000" path="C:\nxp\MCUXpressoIDE_11.8.1_1197\ide\plugins\com.nxp.mcuxpresso.sdk.sdk_2.x_mimxrt1060-evkb_2.14.0.201911251446\sdks\9ab1175805f43ee9494ad2103696fbe5.zip" schema="manifest-schema/sdk_manifest_v3.13.xsd"/>
+<package hash="1690895168000" path="C:\nxp\MCUXpressoIDE_11.8.1_1197\ide\plugins\com.nxp.mcuxpresso.sdk.sdk_2.x_twr-km35z75m_2.14.0.201911251446\sdks\1a49689997a28ead325b6e5ace162bf9.zip" schema="manifest-schema/sdk_manifest_v3.13.xsd"/>
+<package hash="1705413002000" path="/usr/local/mcuxpressoide-11.9.0_2144/ide/plugins/com.nxp.mcuxpresso.sdk.sdk_2.x_mimxrt1060-evkc_2.15.0.201911251446/sdks/a208831885aa4b6227edd82175aaac57.zip" schema="manifest-schema/sdk_manifest_v3.14.xsd"/>
+</sdk-packages>

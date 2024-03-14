@@ -1,0 +1,12 @@
+"Task Aware Debugger for GDB" version 11.8.1 (202308071233)
+Copyright 2016-2023 NXP
+==================================
+13:39:24.863 INFO: [ZephyrRTOS] .config file could not be read [C:\nxpev10642\RT1064_EasyEVSE_V2\Debug\.config (The system cannot find the file specified)]
+13:39:24.863 INFO: [TadModel] DSF session ID 1 has started.
+13:39:45.593 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (RESUMED, USER_REQUEST)
+13:39:45.665 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (SUSPENDED, SIGNAL)
+13:39:46.787 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (RESUMED, USER_REQUEST)
+13:39:46.977 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+13:39:49.890 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+14:37:06.132 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+14:37:08.275 INFO: [TadModel] DSF session ID 1 has ended.
