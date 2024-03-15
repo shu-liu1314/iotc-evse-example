@@ -1,0 +1,59 @@
+/**************************************************************************/
+/*                                                                        */
+/*       Copyright (c) Microsoft Corporation. All rights reserved.        */
+/*                                                                        */
+/*       This software is licensed under the Microsoft Software License   */
+/*       Terms for Microsoft Azure RTOS. Full text of the license can be  */
+/*       found in the LICENSE file at https://aka.ms/AzureRTOS_EULA       */
+/*       and in the root directory of this software.                      */
+/*                                                                        */
+/**************************************************************************/
+
+/* This is a small demo of the high-performance GUIX graphics framework. */
+
+#include <stdint.h>
+#include <stdio.h>
+
+#if (ENABLE_LCD_CODE == 1)
+#include "gx_api.h"
+
+#include "evse_guix_resources.h"
+#include "evse_guix_specifications.h"
+
+
+UINT string_length_get(GX_CONST GX_CHAR *input_string, UINT max_string_length);
+
+void Update_EVSE_Values(void);
+void Update_Meter_Values(void);
+
+/**
+ * Brief : this function is called to print several messages that are displayed in UART.
+ *  The goal is to avoid requiring serial terminal emulator to monitor application boot.
+ *
+ *  This function will prompt clarinox stack messsages
+ * */
+void printf_Wifi_status_prompt( char * str);
+/**
+ * Brief : this function is called to print several messages that are displayed in UART.
+ *  The goal is to avoid requring serial terminal emulator to monitor application boot.
+ *
+ *  This function will prompt DHCP, SNTP and Azure Iot status messages related to device authentication...
+ * */
+void printf_cloud_status_prompt( char * str);
+/* Brief : this function is called to print several messages that are displayed in UART.
+*  The goal is to avoid requring serial terminal emulator to monitor application boot.
+*
+*  This function will prompt how many telemetry messages have been send..
+* */
+void prompt_telemetry_send_times(UINT times);
+
+
+/**
+ * Brief: this function will be called to prompt on vehicle settings menu the battery status
+ *   according to the given meter state.
+ *
+ * Meant to be called in EVSE_iot_comms.c using the variable meterstate
+ *
+ * */
+void printf_battery_status_prompt(uint8_t meterstate);
+#endif

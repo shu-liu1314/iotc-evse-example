@@ -1,0 +1,8 @@
+15:38:51 **** Build of configuration Debug for project RT1060_EasyEVSE_Wi_Fi ****
+make -r -j16 all 
+make[1]: Nothing to be done for 'main-build'.
+echo: write error: Broken pipe
+"make -r -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:38:51 Build Finished. 0 errors, 0 warnings. (took 527ms)
+

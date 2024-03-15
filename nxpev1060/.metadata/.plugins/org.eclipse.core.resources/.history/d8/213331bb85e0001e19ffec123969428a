@@ -1,0 +1,22 @@
+[core]
+	repositoryformatversion = 1
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:avnet-iotconnect/iotc-azurertos-sdk.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[extensions]
+	worktreeConfig = true
+[submodule "cJSON"]
+	active = true
+	url = https://github.com/DaveGamble/cJSON.git
+[submodule "iotc-c-lib"]
+	active = true
+	url = https://github.com/avnet-iotconnect/iotc-c-lib.git
+[submodule "libTO"]
+	active = true
+	url = https://github.com/TrustedObjects/libTO.git

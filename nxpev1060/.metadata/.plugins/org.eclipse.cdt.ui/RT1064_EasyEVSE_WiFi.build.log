@@ -1,0 +1,8 @@
+15:38:54 **** Build of configuration Debug for project RT1064_EasyEVSE_WiFi ****
+make -r -j16 all 
+Building file: ../xip/evkmimxrt1064_flexspi_nor_config.c
+echo: write error: Broken pipe
+"make -r -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:38:54 Build Finished. 0 errors, 0 warnings. (took 308ms)
+

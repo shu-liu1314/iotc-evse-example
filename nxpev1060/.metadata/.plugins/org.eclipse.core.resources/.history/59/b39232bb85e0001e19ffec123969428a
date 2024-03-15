@@ -1,0 +1,18 @@
+# pack-refs with: peeled fully-peeled sorted 
+42d3585e53e514bb5e0cb22e87c47244947c0b7c refs/remotes/origin/awsformat-2.1
+4e508bf4b2a0136cbec3ed1d60e8c1557120d753 refs/remotes/origin/awsformat-2.1_changes_to_json
+257aaeda474aa75358201f9af0d83dda8d8bd6d5 refs/remotes/origin/awsformat-2.1_changes_to_processing_events_and_acks
+fb071f2e6f8f85298b8178c29ee62341382c54ea refs/remotes/origin/iotc-c-lib-patch
+298ac088723559cfd099a8aa71068b11a1a2b736 refs/remotes/origin/makecerts-workaround-for-git-bash
+9d97e380fe96da40b7d5fc78966707be4da65ba0 refs/remotes/origin/master
+7a137a16681f0407cc84796c1c0d38564d2a51b7 refs/remotes/origin/protocol-2.1
+1962d6bd140e9de4d8a0076e807ab7db8dca72a2 refs/remotes/origin/protocol-v2.1
+d1f3bb1bf98db1b49a8cd4950244f8688fcb9bef refs/tags/v1.0.0
+^a57fc006e8f9573be0a1b7026d9195891aa65b68
+9e5c7b39f228dc4c95f6783014ee9e97c20f7a54 refs/tags/v1.1.0
+670208a3c98fe8f762eceeaf55cd0500f93a98fd refs/tags/v2.0.0
+0c5754f10708d19f94a6f0785a23b33e0fde601c refs/tags/v2.0.1
+5c5e98144651a0a9b856944ce967b2073c36b19a refs/tags/v2.0.2
+5c5e98144651a0a9b856944ce967b2073c36b19a refs/tags/v2.0.3
+ad3422226b17e368233a25c3c619f3954864b69c refs/tags/v2.0.4
+0341a6ea0ac82277952ff03a37a082e3e4fa976f refs/tags/v2.0.5

@@ -1,0 +1,13 @@
+# pack-refs with: peeled fully-peeled sorted 
+195a3f9afef7bb66dec6f40fdc9cbd65488fb632 refs/remotes/origin/feature/IOTSDK01-294-LED-and-ECHO-support
+b5fcea480b003695b5f3924fb10d23c90d831a60 refs/remotes/origin/feature/ck-rx65n-copy_paste_support
+db084284112d3d6d1962ad98d7e87939a1c04769 refs/remotes/origin/feature/ck-rx65n-saving_credentials_between_boots
+03bd9f12c8f39c6f5be7628e88ecbfa09fe02ba5 refs/remotes/origin/feature/ck-rx65n-usb-works
+5a9a6c1346a0261ef064a1d4fef50c4040729434 refs/remotes/origin/feature/storing_generated_files
+0d238b8e4d6df867a200a392a93063633a17d592 refs/remotes/origin/main
+40dd644f3431ca2797bd7a7cebec702fd4d358a7 refs/remotes/origin/sdm-same54-demo
+bcaf4832dfabcfe16dfeb3f51fed1d2c92812229 refs/remotes/origin/stevedett-patch-1
+8eac7a17e60314962a57f537e229666749d89b51 refs/tags/v1.0.0
+14eef466e1ccd8adc78fdf4e572832bdbe303fd8 refs/tags/v1.1.0
+4915678202ae143008dcd973fdac4d4de752e1f8 refs/tags/v1.1.1
+bc7235b77d74cc922b710b1da7aa7f23c33f7eb5 refs/tags/v1.1.2

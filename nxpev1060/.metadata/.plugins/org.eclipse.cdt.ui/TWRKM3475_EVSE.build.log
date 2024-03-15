@@ -1,0 +1,26 @@
+15:22:43 **** Build of configuration Debug for project TWRKM3475_EVSE ****
+make -r -j16 all 
+Building file: ../utilities/fsl_debug_console.c
+Building file: ../startup/startup_mkm34z7.c
+Building file: ../source/PWR_Main.c
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DDEBUG -DCPU_MKM34Z256VLQ7 -DSLCD_PANEL_GDH_1247WP_H -DTWR_KM34Z75M -DTOWER -DCPU_MKM34Z256VLQ7_cm0plus -DPRINTF_FLOAT_ENABLE=1 -D__MCUXPRESSO -D__USE_CMSIS -DSDK_DEBUGCONSOLE=1 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/drivers" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/CMSIS" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/utilities" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/board" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/source" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/meterlib" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/fraclib" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/CMSIS" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/drivers" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/utilities" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/startup" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3475_EVSE/slcd_engine" -O0 -fno-common -g -gdwarf-4 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../utilities/"= -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"utilities/fsl_debug_console.d" -MT"utilities/fsl_debug_console.o" -MT"utilities/fsl_debug_console.d" -o "utilities/fsl_debug_console.o" "../utilities/fsl_debug_console.c"
+Building file: ../source/mtb.c
+echo: write error: Broken pipe
+echo: write error: Broken pipe
+make[1]: *** [slcd_engine/subdir.mk:21: slcd_engine/GDH-1247WP.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [source/subdir.mk:25: source/semihost_hardfault.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [slcd_engine/subdir.mk:21: slcd_engine/slcd_engine.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [drivers/subdir.mk:54: drivers/fsl_adc16.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [source/subdir.mk:27: source/mtb.o] Error 1
+../utilities/fsl_debug_console.c: In function 'DbgConsole_Getchar':
+../utilities/fsl_debug_console.c:482:31: warning: 'ch' may be used uninitialized [-Wmaybe-uninitialized]
+"make -r -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:22:43 Build Failed. 6 errors, 1 warnings. (took 305ms)
+
