@@ -1,8 +1,0 @@
-/tmp/shu/nxpev10642/TWRKM3575_EVSE/drivers/fsl_clock.h:823:20:CLOCK_SetSimSafeDivs	8	static
-/tmp/shu/nxpev10642/TWRKM3575_EVSE/drivers/fsl_clock.h:1146:20:CLOCK_SetXtal0Freq	16	static
-/tmp/shu/nxpev10642/TWRKM3575_EVSE/drivers/fsl_smc.h:256:20:SMC_SetPowerModeProtection	16	static
-/tmp/shu/nxpev10642/TWRKM3575_EVSE/drivers/fsl_smc.h:275:33:SMC_GetPowerModeState	16	static
-../board/clock_config.c:71:13:CLOCK_CONFIG_FllStableDelay	16	static
-../board/clock_config.c:83:6:BOARD_InitBootClocks	8	static
-../board/clock_config.c:173:6:BOARD_BootClockRUN	24	static
-../board/clock_config.c:265:6:BOARD_BootClockVLPR	8	static
