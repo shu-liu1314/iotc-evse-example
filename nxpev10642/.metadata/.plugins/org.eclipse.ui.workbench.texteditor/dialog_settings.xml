@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="X509"/>
+		<item key="selection" value="USE_SE_DEVICE_CERTIFICATE"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="USE_SE_DEVICE_CERTIFICATE"/>
 			<item value="x509"/>
 			<item value="time_get"/>
 			<item value="time"/>
@@ -16,7 +17,6 @@
 			<item value="unix_time_get"/>
 			<item value="sntp_time_sync"/>
 			<item value="unix_time_get1"/>
-			<item value="USE_SE_DEVICE_CERTIFICATE"/>
 			<item value="se05x_device_cert"/>
 			<item value="rsa"/>
 			<item value="sample_helper_thread_entry"/>
