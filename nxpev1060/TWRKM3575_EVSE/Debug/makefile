@@ -50,7 +50,7 @@ main-build: TWRKM3575_EVSE.axf
 TWRKM3575_EVSE.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/tmp/shu/iotc-evse-example/nxpev1060/TWRKM3575_EVSE/meterlib" -L"/tmp/shu/iotc-evse-example/nxpev1060/TWRKM3575_EVSE/fraclib" -Xlinker -Map="TWRKM3575_EVSE.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T TWRKM3575_EVSE_Debug.ld -o "TWRKM3575_EVSE.axf" $(OBJS) $(USER_OBJS) $(LIBS) -lmeter_cm0p_mmau_gcc -lfrac_cm0p_mmau_gcc
+	arm-none-eabi-gcc -nostdlib -L"/home/py/wrk/iotc/iotc-evse-example/nxpev1060/TWRKM3575_EVSE/meterlib" -L"/home/py/wrk/iotc/iotc-evse-example/nxpev1060/TWRKM3575_EVSE/fraclib" -Xlinker -Map="TWRKM3575_EVSE.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T TWRKM3575_EVSE_Debug.ld -o "TWRKM3575_EVSE.axf" $(OBJS) $(USER_OBJS) $(LIBS) -lmeter_cm0p_mmau_gcc -lfrac_cm0p_mmau_gcc
 	@echo 'Finished building target: $@'
 	@echo ' '
 

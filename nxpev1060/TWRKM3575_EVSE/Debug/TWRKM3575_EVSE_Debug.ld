@@ -5,7 +5,7 @@
  * Generated linker script file for MKM35Z512xxx7
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on 15 Mar 2024, 15:53:19
+ * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on 19 Mar 2024, 13:56:41
  */
 
 INCLUDE "TWRKM3575_EVSE_Debug_library.ld"
