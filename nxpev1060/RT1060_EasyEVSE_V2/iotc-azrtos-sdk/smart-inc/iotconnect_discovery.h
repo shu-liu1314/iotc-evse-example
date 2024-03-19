@@ -1,0 +1,1 @@
+../iotc-c-lib/include/iotconnect_discovery.h

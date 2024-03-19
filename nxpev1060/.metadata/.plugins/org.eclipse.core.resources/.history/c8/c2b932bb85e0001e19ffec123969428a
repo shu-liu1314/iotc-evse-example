@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 1
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	worktree = ../../../iotc-azrtos-sdk/libTO
+[remote "origin"]
+	url = https://github.com/TrustedObjects/libTO.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[extensions]
+	worktreeConfig = true

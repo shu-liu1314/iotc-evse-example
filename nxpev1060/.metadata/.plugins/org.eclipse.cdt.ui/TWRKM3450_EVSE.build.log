@@ -1,0 +1,26 @@
+15:22:39 **** Build of configuration Debug for project TWRKM3450_EVSE ****
+make -r -j16 all 
+Building file: ../utilities/fsl_assert.c
+Building file: ../utilities/fsl_debug_console.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DCPU_MKM34Z128ACLL5 -DCPU_MKM34Z128ACLL5_cm0plus -DTWR_KM34Z50MV3 -DTOWER -DMCUXPRESSO_SDK -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -DSERIAL_PORT_TYPE_UART=1 -DPRINTF_FLOAT_ENABLE=1 -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/board" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/source" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/drivers" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/utilities" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/device" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/component/uart" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/component/lists" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/CMSIS" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/slcd_engine" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/fraclib" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/meterlib" -O0 -fno-common -g3 -gdwarf-4 -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fmerge-constants -fmacro-prefix-map="../utilities/"= -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"utilities/fsl_assert.d" -MT"utilities/fsl_assert.o" -MT"utilities/fsl_assert.d" -o "utilities/fsl_assert.o" "../utilities/fsl_assert.c"
+Building file: ../startup/startup_mkm34za5.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DCPU_MKM34Z128ACLL5 -DCPU_MKM34Z128ACLL5_cm0plus -DTWR_KM34Z50MV3 -DTOWER -DMCUXPRESSO_SDK -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -DSERIAL_PORT_TYPE_UART=1 -DPRINTF_FLOAT_ENABLE=1 -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/board" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/source" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/drivers" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/utilities" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/device" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/component/uart" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/component/lists" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/CMSIS" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/slcd_engine" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/fraclib" -I"/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/TWRKM3450_EVSE/meterlib" -O0 -fno-common -g3 -gdwarf-4 -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fmerge-constants -fmacro-prefix-map="../utilities/"= -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"utilities/fsl_debug_console.d" -MT"utilities/fsl_debug_console.o" -MT"utilities/fsl_debug_console.d" -o "utilities/fsl_debug_console.o" "../utilities/fsl_debug_console.c"
+echo: write error: Broken pipe
+echo: write error: Broken pipe
+make[1]: *** [slcd_engine/subdir.mk:21: slcd_engine/GDH-1247WP.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [source/subdir.mk:26: source/mtb.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [source/subdir.mk:26: source/semihost_hardfault.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [slcd_engine/subdir.mk:21: slcd_engine/slcd_engine.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [startup/subdir.mk:21: startup/startup_mkm34za5.o] Error 1
+echo: write error: Broken pipe
+make[1]: *** [utilities/subdir.mk:24: utilities/fsl_assert.o] Error 1
+"make -r -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:22:39 Build Failed. 7 errors, 0 warnings. (took 331ms)
+

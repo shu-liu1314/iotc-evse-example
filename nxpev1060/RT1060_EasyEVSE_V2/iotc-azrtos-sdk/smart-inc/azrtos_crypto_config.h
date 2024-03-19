@@ -1,0 +1,1 @@
+../azrtos-layer/include/azrtos_crypto_config.h

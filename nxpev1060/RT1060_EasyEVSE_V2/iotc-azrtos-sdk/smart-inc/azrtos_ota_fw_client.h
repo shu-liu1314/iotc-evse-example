@@ -1,0 +1,1 @@
+../azrtos-layer/azrtos-ota/include/azrtos_ota_fw_client.h

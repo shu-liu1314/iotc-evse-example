@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="true" description="Delete 3 resources" element1="/evkmimxrt1060_netxduo_lib_V2" element2="/RT1060_EasyEVSE" element3="/RT1060_EasyEVSE_V2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1709048718954"/>
+</session>

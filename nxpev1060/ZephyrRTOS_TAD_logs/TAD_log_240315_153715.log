@@ -1,0 +1,6 @@
+"Task Aware Debugger for GDB" version 11.9.0 (202311161535)
+Copyright 2016-2023 NXP
+==================================
+15:37:10.436 INFO: [ZephyrRTOS] .config file could not be read [/home/py/Documents/MCUXpresso_11.9.0_2144/workspace/RT1064_EasyEVSE_V2/Debug/.config (No such file or directory)]
+15:37:10.436 INFO: [TadModel] DSF session ID 3 has started.
+15:37:15.333 INFO: [TadModel] DSF session ID 3 has ended.
