@@ -14,8 +14,8 @@
 #include <stdio.h>
 #include "gx_api.h"
 
-#include "evse_guix_resources.h"
-#include "evse_guix_specifications.h"
+#include "EVSE_GUIX_resources.h"
+#include "EVSE_GUIX_specifications.h"
 
 
 UINT string_length_get(GX_CONST GX_CHAR *input_string, UINT max_string_length);

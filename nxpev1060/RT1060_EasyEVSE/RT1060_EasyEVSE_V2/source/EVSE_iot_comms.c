@@ -2247,10 +2247,10 @@ void sample_entry(NX_IP *ip_ptr, NX_PACKET_POOL *pool_ptr, NX_DNS *dns_ptr, UINT
     root_certs[0].size = _nx_azure_iot_root_cert_size;
     root_certs[1].data = _nx_azure_iot_root_cert_2;
     root_certs[1].size = _nx_azure_iot_root_cert_size_2;
-    root_certs[2].data = _nx_azure_iot_root_cert_3;
-    root_certs[2].size = _nx_azure_iot_root_cert_size_3;
+//    root_certs[2].data = _nx_azure_iot_root_cert_3;
+//    root_certs[2].size = _nx_azure_iot_root_cert_size_3;
 
-    for (int i = 0; i < APP_CERTIFICATE_COUNT; i++)
+    for (int i = 0; i < 2; i++)
     {
         /* Initialize CA certificates.  */
         status = nx_secure_x509_certificate_initialize(&root_ca_cert[i],
