@@ -13,9 +13,12 @@
 #include <azure/core/_az_cfg.h>
 
 static const uint8_t null_terminator = '\0';
-static const az_span telemetry_topic_prefix = AZ_SPAN_LITERAL_FROM_STR("devices/");
-static const az_span telemetry_topic_modules_mid = AZ_SPAN_LITERAL_FROM_STR("/modules/");
-static const az_span telemetry_topic_suffix = AZ_SPAN_LITERAL_FROM_STR("/messages/events/");
+
+
+/* Generate the telemetry topic in the format of:  $aws/rules/msg_d2c_rpt/DEVICE_ID/2.1/0
+ */
+static const az_span telemetry_topic_prefix = AZ_SPAN_LITERAL_FROM_STR( "$aws/rules/msg_d2c_rpt/");
+static const az_span telemetry_topic_suffix = AZ_SPAN_LITERAL_FROM_STR( "/2.1/0");
 
 AZ_NODISCARD az_result az_iot_hub_client_telemetry_get_publish_topic(
     az_iot_hub_client const* client,
@@ -31,13 +34,10 @@ AZ_NODISCARD az_result az_iot_hub_client_telemetry_get_publish_topic(
   const az_span* const module_id = &(client->_internal.options.module_id);
 
   az_span mqtt_topic_span = az_span_create((uint8_t*)mqtt_topic, (int32_t)mqtt_topic_size);
-  int32_t required_length = az_span_size(telemetry_topic_prefix)
-      + az_span_size(client->_internal.device_id) + az_span_size(telemetry_topic_suffix);
-  int32_t module_id_length = az_span_size(*module_id);
-  if (module_id_length > 0)
-  {
-    required_length += az_span_size(telemetry_topic_modules_mid) + module_id_length;
-  }
+  int32_t required_length = az_span_size(telemetry_topic_prefix);
+  required_length += az_span_size(client->_internal.device_id);
+  required_length += az_span_size(telemetry_topic_suffix);
+
   if (properties != NULL)
   {
     required_length += properties->_internal.properties_written;
@@ -48,13 +48,6 @@ AZ_NODISCARD az_result az_iot_hub_client_telemetry_get_publish_topic(
 
   az_span remainder = az_span_copy(mqtt_topic_span, telemetry_topic_prefix);
   remainder = az_span_copy(remainder, client->_internal.device_id);
-
-  if (module_id_length > 0)
-  {
-    remainder = az_span_copy(remainder, telemetry_topic_modules_mid);
-    remainder = az_span_copy(remainder, *module_id);
-  }
-
   remainder = az_span_copy(remainder, telemetry_topic_suffix);
 
   if (properties != NULL)

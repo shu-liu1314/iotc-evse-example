@@ -11,6 +11,9 @@
 
 /* Version: 6.1 */
 
+// MG: FIXME:  Defined to disable IoT Security Module (define here or elsewhere?)
+#define NX_AZURE_DISABLE_IOT_SECURITY_MODULE 1
+
 #include "nx_azure_iot.h"
 #ifndef NX_AZURE_DISABLE_IOT_SECURITY_MODULE
 #include "nx_azure_iot_security_module.h"

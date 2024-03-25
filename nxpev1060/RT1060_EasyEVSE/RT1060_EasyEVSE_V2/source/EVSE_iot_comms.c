@@ -1051,8 +1051,10 @@ static VOID sample_connected_action(SAMPLE_CONTEXT *context)
 
     context -> state = SAMPLE_STATE_CONNECTED;
 
+#ifndef DISABLE_FOR_IOTCONNECT
     context -> action_result =
         nx_azure_iot_hub_client_device_twin_properties_request(&(context -> iothub_client), NX_WAIT_FOREVER);
+#endif
 }
 
 static VOID sample_initialize_iothub(SAMPLE_CONTEXT *context)
@@ -1174,6 +1176,8 @@ static VOID sample_initialize_iothub(SAMPLE_CONTEXT *context)
     {
         PRINTF("Failed on connection_status_callback!\r\n");
     }
+
+#ifndef DISABLE_FOR_IOTCONNECT
     else if ((status = nx_azure_iot_hub_client_direct_method_enable(iothub_client_ptr)))
     {
         PRINTF("Direct method receive enable failed!: error code = 0x%08x\r\n", status);
@@ -1207,6 +1211,7 @@ static VOID sample_initialize_iothub(SAMPLE_CONTEXT *context)
     {
         PRINTF("digital twin modelId set!: error code = 0x%08x\r\n", status);
     }
+#endif
 
     if (status)
     {
@@ -1290,7 +1295,10 @@ static VOID sample_trigger_action(SAMPLE_CONTEXT *context)
             {
                 context -> last_periodic_action_tick = tx_time_get();
                 tx_event_flags_set(&(context -> sample_events), SAMPLE_TELEMETRY_SEND_EVENT, TX_OR);
-//              tx_event_flags_set(&(context -> sample_events), SAMPLE_DEVICE_TWIN_REPORTED_PROPERTY_EVENT, TX_OR);
+
+#ifndef DISABLE_FOR_IOTCONNECT
+                tx_event_flags_set(&(context -> sample_events), SAMPLE_DEVICE_TWIN_REPORTED_PROPERTY_EVENT, TX_OR);
+#endif
             }
         }
         break;
@@ -1512,8 +1520,11 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
     az_json_writer json_builder;
     UINT buffer_length;
 
+    PRINTF(" \r\n *** sample_telemetry_action *** \r\n");
+
     if (context -> state != SAMPLE_STATE_CONNECTED)
     {
+        PRINTF("\r\n not connected \r\n");
         return;
     }
 
@@ -1539,39 +1550,40 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
     	 {
     		Authstr = az_span_create_from_str("FAIL");
     	 }
-        /* Only transmit Fist time ie on connect */
-		if(!(az_result_succeeded(az_json_writer_init(&json_builder, AZ_SPAN_FROM_BUFFER(scratch_buffer), NULL)) &&
-			 az_result_succeeded(az_json_writer_append_begin_object(&json_builder)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evseid)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, Evsestr)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_battery)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, Battery)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselimit)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, EvseRating)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_chargestatus)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, Statestr)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_vehicleid)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, Vehiclestr)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_vehicleauthentic)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, Authstr)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_batterycapacity)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, batterycapacity)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_firmwareV)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, firmwareV)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselocation)) &&
-			 az_result_succeeded(az_json_writer_append_begin_object(&json_builder)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselocation_lat)) &&
-			 az_result_succeeded(az_json_writer_append_double(&json_builder, latitude, 6)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselocation_lon)) &&
-			 az_result_succeeded(az_json_writer_append_double(&json_builder, longitude, 6)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselocation_alt)) &&
-			 az_result_succeeded(az_json_writer_append_double(&json_builder, altitude, 6)) &&
-			 az_result_succeeded(az_json_writer_append_end_object(&json_builder))))
-		{
-			PRINTF("Telemetry message failed to build intial message\r\n");
-			nx_azure_iot_hub_client_telemetry_message_delete(packet_ptr);
-			return;
-		}
+
+        /* Only transmit Fist time on connect */
+
+        const char *telemetry_first_msg_fmt =
+					"{"
+						"\"mt\":0,"
+						"\"tg\":\"\","
+						"\"d\":[{"
+							"\"id\":\"%s\","
+							"\"d\":{"
+								"\"evseid\":\"%s\","
+								"\"battery\":%d,"
+								"\"evseLimit\":%d,"
+								"\"chargestatus\":\"%s\","
+								"\"vehicleid\":\"%s\","
+								"\"vehicleauthentic2\":\"%s\","
+								"\"batterycapacity\":%d"
+							"}"
+						"}]"
+					"}";
+
+      	snprintf(scratch_buffer, sizeof scratch_buffer, telemetry_first_msg_fmt,
+      			DEVICE_ID,
+      			Evsestr,
+			Battery,
+			EvseRating,
+			Statestr,
+			Vehiclestr,
+			Authstr,
+			batterycapacity);
+
+		PRINTF("Telemetry message failed to build intial message\r\n");
+		nx_azure_iot_hub_client_telemetry_message_delete(packet_ptr);
+		return;
     }
     else
     {
@@ -1583,48 +1595,63 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
       	chargingrate = kwh;
       	ChargeCost = (TariffCost * chargingrate) /1000;
       	Statestr = az_span_create_from_str(ChargeStatus);
-		if(!(az_result_succeeded(az_json_writer_init(&json_builder, AZ_SPAN_FROM_BUFFER(scratch_buffer), NULL)) &&
-			 az_result_succeeded(az_json_writer_append_begin_object(&json_builder)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_evselimit)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, EvseRating)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_battery)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, Battery)) &&
 
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_irms)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, irms)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_vrms)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, vrms)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_kwh)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, kwh)) &&
+		const char *telemetry_fmt =
+					"{"
+						"\"mt\":0,"
+						"\"tg\":\"\","
+						"\"d\":[{"
+							"\"id\":\"%s\","
+							"\"d\":{"
+								"\"evseLimit\":%d,"
+								"\"battery\":%d,"
+								"\"irms\":%.2f,"
+								"\"vrms\":%.2f,"
+								"\"kwh\":%.1f,"
+								"\"temperature\":%d,"
+								"\"chargestatus\":\"%s\","
+								"\"ChargeRate\":%d,"
+								"\"chargecost\":%.2f,"
+								"\"TimeRemaining\":\"%s\","
+							"}"
+						"}]"
+					"}";
 
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_temperature)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, Temperature)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_chargestatus)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, Statestr)) &&
-
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_ChargeRate)) &&
-			 az_result_succeeded(az_json_writer_append_int32(&json_builder, chargingrate)) &&
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_chargecost)) &&
-			 az_result_succeeded(az_json_writer_append_double(&json_builder, ChargeCost, DOUBLE_DECIMAL_PLACE_DIGITS)) &&
-
-			 az_result_succeeded(az_json_writer_append_property_name(&json_builder, telemetry_name_TimeRemaining)) &&
-			 az_result_succeeded(az_json_writer_append_string(&json_builder, str2send)) &&
-			 az_result_succeeded(az_json_writer_append_end_object(&json_builder))))
-		{
-			PRINTF("Telemetry message failed to build update message\r\n");
-			nx_azure_iot_hub_client_telemetry_message_delete(packet_ptr);
-			return;
-		}
+      	snprintf(scratch_buffer, sizeof scratch_buffer, telemetry_fmt,
+      			DEVICE_ID,
+      			EvseRating,
+				Battery,
+				irms,
+				vrms,
+				kwh,
+				Temperature,
+				Statestr,
+				chargingrate,
+				ChargeCost,
+				str2send
+      			);
     }
 
-    buffer_length = (UINT)az_span_size(az_json_writer_get_bytes_used_in_destination(&json_builder));
+    buffer_length = strlen(scratch_buffer);
+
+    PRINTF("\r\ncalling nx_azure_iot_hub_client_telemetry_send\r\n");
+    PRINTF("scratch: %s\r\n", scratch_buffer);
+    PRINTF("length:%d\r\n", buffer_length);
+
     if ((status = nx_azure_iot_hub_client_telemetry_send(&(context -> iothub_client), packet_ptr,
                                                          (UCHAR *)scratch_buffer, buffer_length, SAMPLE_WAIT_OPTION)))
     {
-        PRINTF("Telemetry message send failed!: error code = 0x%08x\r\n", status);
+        PRINTF("\r\nTelemetry message send failed!: error code = 0x%08x\r\n", status);
         nx_azure_iot_hub_client_telemetry_message_delete(packet_ptr);
         return;
     }
+
+    PRINTF("\r\ntelemetry sent\r\n");
+
+// MG:FIXME:  Add an extra 4 second delay between sending telemetry
+// Timeout in sample_event_loop is already 5 seconds.
+// tx_thread_sleep(TX_TIMER_TICKS_PER_SECOND * 4);
+
     Update_EVSE_Values();
     PRINTF(YELLOW_TEXT("Telemetry Updating...\r\n"));
 }
@@ -1789,53 +1816,73 @@ static VOID sample_event_loop(SAMPLE_CONTEXT *context)
 
         if (app_events & SAMPLE_CONNECT_EVENT)
         {
-            sample_connect_action(context);
+        	PRINTF("\r\n connect event \r\n");
+
+        	sample_connect_action(context);
         }
 
         if (app_events & SAMPLE_INITIALIZATION_EVENT)
         {
-            sample_initialize_iothub(context);
+        	PRINTF("\r\n initialization event \r\n");
+
+        	sample_initialize_iothub(context);
         }
 
         if (app_events & SAMPLE_DEVICE_TWIN_GET_EVENT)
         {
+        	PRINTF("\r\n device twin get event \r\n");
+
         	sample_device_twin_get_action(context);
         }
 
         if (app_events & SAMPLE_METHOD_MESSAGE_EVENT)
         {
-            sample_direct_method_action(context);
+        	PRINTF("\r\n method message event \r\n");
+
+        	sample_direct_method_action(context);
         }
 
         if (app_events & SAMPLE_DEVICE_TWIN_DESIRED_PROPERTY_EVENT)
         {
+        	PRINTF("\r\n twin desires property event \r\n");
+
         	sample_device_twin_desired_property_action(context);
         }
 
         if (app_events & SAMPLE_TELEMETRY_SEND_EVENT)
         {
+        	PRINTF("\r\n telemetry send event \r\n");
+
             sample_telemetry_action(context, firstMsg);
             firstMsg = 0;
         }
 
         if (app_events & SAMPLE_DEVICE_TWIN_REPORTED_PROPERTY_EVENT)
         {
+        	PRINTF("\r\n twin reported event \r\n");
+
         	sample_device_twin_reported_property_action(context);
         }
 
         if (app_events & SAMPLE_DISCONNECT_EVENT)
         {
-            sample_disconnect_action(context);
+        	PRINTF("\r\n disconnect event \r\n");
+
+        	sample_disconnect_action(context);
         }
 
         if (app_events & SAMPLE_CONNECTED_EVENT)
         {
+        	PRINTF("\r\n connected event \r\n");
+
             sample_connected_action(context);
         }
 
         if (app_events & SAMPLE_RECONNECT_EVENT)
         {
-            sample_connection_error_recover(context);
+        	PRINTF("\r\n reconnect event \r\n");
+
+        	sample_connection_error_recover(context);
         }
 
         sample_trigger_action(context);
