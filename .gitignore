@@ -1,3 +1,7 @@
 *.su
 *.o
 *.d
+*.log
+*.pem
+*.crt
+

@@ -439,9 +439,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.crt.advproject.config.exe.debug.627089500.1786353694" name="nx_azure_iot_ciphersuites.c" rcbsApplicability="disable" resourcePath="iotc-azrtos-sdk/azrtos-layer/src/nx_azure_iot_ciphersuites.c" toolsToInvoke="com.crt.advproject.gcc.exe.debug.1538187100.1550308827">
-						<tool id="com.crt.advproject.gcc.exe.debug.1538187100.1550308827" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug.1538187100"/>
-					</fileInfo>
 					<folderInfo id="com.crt.advproject.config.exe.debug.627089500.1036906623" name="/" resourcePath="source">
 						<toolChain id="com.crt.advproject.toolchain.exe.debug.1382256421" name="NXP MCU Tools" superClass="com.crt.advproject.toolchain.exe.debug" unusedChildren="">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.debug" name="ARM-based MCU (Debug)" superClass="com.crt.advproject.platform.exe.debug"/>

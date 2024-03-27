@@ -2,7 +2,7 @@
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_DtJ3kOXwEe6bAbPYR-akIg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_DtJ3keXwEe6bAbPYR-akIg" bindingContexts="_DtKhCOXwEe6bAbPYR-akIg">
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;app_config.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/app_config.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/app_config.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_app.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/main.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/source/main.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;EVSE_GUIX_main.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/EVSE_GUIX_main.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/source/EVSE_GUIX_main.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;EVSE_GUIX_main.h&quot; tooltip=&quot;RT1064_EasyEVSE_V2/source/EVSE_GUIX_main.h&quot;>&#xA;&lt;persistable path=&quot;/RT1064_EasyEVSE_V2/source/EVSE_GUIX_main.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;RT1060_EasyEVSE_Wi_Fi/source/main.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_Wi_Fi/source/main.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;EVSE_GUIX_main.h&quot; tooltip=&quot;RT1060_EasyEVSE_Wi_Fi/source/EVSE_GUIX_main.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_Wi_Fi/source/EVSE_GUIX_main.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;azrtos_https_client.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/azrtos-layer/src/azrtos_https_client.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/azrtos-layer/src/azrtos_https_client.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;azrtos_time.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/azrtos-layer/src/azrtos_time.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/azrtos-layer/src/azrtos_time.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/src/iotconnect.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/src/iotconnect.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;nx_web_http_client.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/azure-rtos/netxduo/addons/web/nx_web_http_client.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/azure-rtos/netxduo/addons/web/nx_web_http_client.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_event.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/iotc-c-lib/include/iotconnect_event.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/iotc-c-lib/include/iotconnect_event.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/iotconnect.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/iotconnect.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_common.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/iotconnect_common.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc-azrtos-sdk/smart-inc/iotconnect_common.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;fsl_device_registers.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/device/fsl_device_registers.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/device/fsl_device_registers.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;board.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/board/board.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/board/board.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32_hal.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-azurertos-sdk/iotc-azrtos-sdk/libTO/Sources/src/wrapper/stm32_hal.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-azurertos-sdk/iotc-azrtos-sdk/libTO/Sources/src/wrapper/stm32_hal.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;to_auth_driver.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/authentication/driver/to_auth_driver.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/authentication/driver/to_auth_driver.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;aes-gcm-sw.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-azurertos-sdk/iotc-azrtos-sdk/libTO/Sources/src/aes-gcm-sw/aes-gcm-sw.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-azurertos-sdk/iotc-azrtos-sdk/libTO/Sources/src/aes-gcm-sw/aes-gcm-sw.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_app.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/source/iotconnect_app.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/source/iotconnect_app.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;azrtos_ota_fw_client.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/azrtos-layer/azrtos-ota/src/azrtos_ota_fw_client.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/azrtos-layer/azrtos-ota/src/azrtos_ota_fw_client.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_di.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/src/iotconnect_di.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/src/iotconnect_di.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/src/iotconnect.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/src/iotconnect.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect.h&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/include/iotconnect.h&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-evse-example/iotc-azrtos-sdk/include/iotconnect.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_app.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotconnect_app.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotconnect_app.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_event.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/iotc/iotc-c-lib/src/iotconnect_event.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/iotc/iotc-c-lib/src/iotconnect_event.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;iotc-evse-example/source/main.c&quot;>&#xA;&lt;persistable path=&quot;/iotc-evse-example/source/main.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;EVSE_iot_comms.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/EVSE_iot_comms.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/source/EVSE_iot_comms.c&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;EVSE_GUIX_main.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/EVSE_GUIX_main.c&quot;>&#xA;&lt;persistable path=&quot;/RT1060_EasyEVSE_V2/source/EVSE_GUIX_main.c&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_DtJ3keXwEe6bAbPYR-akIg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_DtJ3kuXwEe6bAbPYR-akIg" x="0" y="22" width="1926" height="1062">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_DtJ3keXwEe6bAbPYR-akIg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_DtJ3kuXwEe6bAbPYR-akIg" x="0" y="22" width="2054" height="1134">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -59,7 +59,7 @@
           <tags>persp.newWizSC:com.nxp.mcuxpresso.datamodels.wizards.SDKImportWizard</tags>
           <tags>persp.viewSC:com.nxp.mcuxpresso.addons.peripheralsview.view.OnlinePeripheralsView</tags>
           <tags>persp.viewSC:com.nxp.mcuxpresso.addons.peripheralsview.view.OfflinePeripheralsView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_DtJ3leXwEe6bAbPYR-akIg" selectedElement="_DtJ3ouXwEe6bAbPYR-akIg" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_DtJ3leXwEe6bAbPYR-akIg" selectedElement="_DtJ3luXwEe6bAbPYR-akIg" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_DtJ3luXwEe6bAbPYR-akIg" containerData="2500" selectedElement="_DtJ3l-XwEe6bAbPYR-akIg">
               <children xsi:type="basic:PartStack" xmi:id="_DtJ3l-XwEe6bAbPYR-akIg" elementId="perspective.area.project.explorer" containerData="5005" selectedElement="_DtJ3mOXwEe6bAbPYR-akIg">
                 <tags>active</tags>
@@ -407,7 +407,7 @@
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_DtJ6b-XwEe6bAbPYR-akIg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="iotconnect_app.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_app.c&quot; partName=&quot;iotconnect_app.c&quot; title=&quot;iotconnect_app.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;8518&quot; selectionTopPixel=&quot;3888&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;iotconnect_app.c&quot; partName=&quot;iotconnect_app.c&quot; title=&quot;iotconnect_app.c&quot; tooltip=&quot;RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/RT1060_EasyEVSE_V2/source/iotconnect_app.c&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;8518&quot; selectionTopPixel=&quot;3944&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
@@ -421,11 +421,12 @@
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_DtJ6dOXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_DtJ6weXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.navigator.ProjectExplorer"/>
+      <toolbar xmi:id="_DtJ6weXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.navigator.ProjectExplorer" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DtJ6zOXwEe6bAbPYR-akIg" elementId="org.eclipse.cdt.ui.CView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="C/C++ Projects" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/view16/cview.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.cdt.internal.ui.cview.CView"/>
@@ -461,7 +462,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_DtJ60uXwEe6bAbPYR-akIg" elementId="com.crt.quickstart.views.QuickstartView"/>
+      <toolbar xmi:id="_DtJ60uXwEe6bAbPYR-akIg" elementId="com.crt.quickstart.views.QuickstartView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DtJ60-XwEe6bAbPYR-akIg" elementId="org.eclipse.debug.ui.VariableView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Variables" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.debug.internal.ui.views.variables.VariablesView"/>
@@ -527,7 +528,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_DtJ65uXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.console.ConsoleView"/>
+      <toolbar xmi:id="_DtJ65uXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DtJ7A-XwEe6bAbPYR-akIg" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Terminal" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.tm.terminal.view.ui.view.TerminalsView"/>
@@ -557,7 +558,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_DtJ7GOXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.views.ContentOutline"/>
+      <toolbar xmi:id="_DtJ7GOXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.views.ContentOutline" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DtJ7H-XwEe6bAbPYR-akIg" elementId="com.nxp.mcuxpresso.core.debug.ui.views.NXPGlobalVariablesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Global Variables" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="com.nxp.mcuxpresso.core.debug.ui.views.GlobalVariablesDumpView"/>
@@ -581,7 +582,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_DtJ7KeXwEe6bAbPYR-akIg" elementId="org.eclipse.debug.ui.MemoryView"/>
+      <toolbar xmi:id="_DtJ7KeXwEe6bAbPYR-akIg" elementId="org.eclipse.debug.ui.MemoryView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_DtJ7NuXwEe6bAbPYR-akIg" elementId="com.nxp.mcuxpresso.core.debug.ui.views.NXPHeapAndStackUsageView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Heap and Stack Usage" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="com.nxp.mcuxpresso.core.debug.ui.views.HeapStackUsageView"/>
@@ -668,7 +669,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DtJ7SeXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_DtJ7UeXwEe6bAbPYR-akIg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DtLwGOXwEe6bAbPYR-akIg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_bCrxEOwmEe6-8fn7cbBzPA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DtLwGOXwEe6bAbPYR-akIg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DtJ7WeXwEe6bAbPYR-akIg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -699,10 +700,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DtKfL-XwEe6bAbPYR-akIg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_DtKfNeXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DtLvveXwEe6bAbPYR-akIg"/>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_DtKfOuXwEe6bAbPYR-akIg" elementId="org.eclipse.cdt.ui.editor.CEditor" visible="false">
-        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_bCtmQOwmEe6-8fn7cbBzPA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DtLvveXwEe6bAbPYR-akIg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DtKfO-XwEe6bAbPYR-akIg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2093,18 +2091,18 @@
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
   </descriptors>
-  <trimContributions xmi:id="_DtLtPuXwEe6bAbPYR-akIg" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
-    <children xsi:type="menu:ToolControl" xmi:id="_DtLtP-XwEe6bAbPYR-akIg" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
       <tags>glue</tags>
       <tags>move_after:PerspectiveSpacer</tags>
       <tags>SHOW_RESTORE_MENU</tags>
     </children>
-    <children xsi:type="menu:ToolControl" xmi:id="_DtLtQOXwEe6bAbPYR-akIg" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
       <tags>move_after:Spacer Glue</tags>
       <tags>HIDEABLE</tags>
       <tags>SHOW_RESTORE_MENU</tags>
     </children>
-    <children xsi:type="menu:ToolControl" xmi:id="_DtLtQeXwEe6bAbPYR-akIg" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
       <tags>glue</tags>
       <tags>move_after:SearchField</tags>
       <tags>SHOW_RESTORE_MENU</tags>

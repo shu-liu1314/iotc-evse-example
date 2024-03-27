@@ -1,29 +1,11 @@
-!SESSION 2024-03-26 15:47:13.514 -----------------------------------------------
+!SESSION 2024-03-27 11:37:07.748 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=17.0.7
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
-Command-line arguments:  -data /tmp/mg/ -os linux -ws gtk -arch x86_64
+Command-line arguments:  -os linux -ws gtk -arch x86_64
 
-!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-03-26 15:47:21.313
-!MESSAGE Recreating part support. No part support available.
-
-!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-03-26 15:47:24.219
-!MESSAGE The device 'MIMXRT1062xxxxB' (version='1.0.0') from SDK 'SDK_2.x_MIMXRT1060-EVKB' (version='2.15.000', build='epluginsite797 2024-01-15') will be installed.
-
-!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-03-26 15:47:24.791
-!MESSAGE The device 'MKM35Z512xxx7' (version='1.0.0') from SDK 'SDK_2.x_TWR-KM35Z75M' (version='2.15.000', build='epluginsite797 2024-01-15') will be installed.
-
-!ENTRY com.nxp.mcuxpresso.core.datamodels 2 0 2024-03-26 15:47:25.237
-!MESSAGE The device 'MIMXRT1062xxxxB' (version='1.0.0') from SDK 'SDK_2.x_MIMXRT1060-EVKC' (version='2.15.000', build='epluginsite797 2024-01-15') has not been imported because a newer/existing device has been already installed.
-
-!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-03-26 15:47:25.589
-!MESSAGE The device 'MIMXRT1062xxxxA' (version='1.0.0') from SDK 'SDK_2.x_EVK-MIMXRT1060' (version='2.15.000', build='epluginsite797 2024-01-15') will be installed.
-
-!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-03-26 15:47:26.006
-!MESSAGE The device 'MIMXRT1064xxxxA' (version='1.0.0') from SDK 'SDK_2.x_EVK-MIMXRT1064' (version='2.15.000', build='epluginsite797 2024-01-15') will be installed.
-
-!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-26 15:48:01.101
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-27 11:37:52.477
 !MESSAGE /css/gef_dark.css
 !STACK 0
 java.io.FileNotFoundException: /css/gef_dark.css
@@ -84,14 +66,104 @@ java.io.FileNotFoundException: /css/gef_dark.css
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
-!SESSION 2024-03-26 15:48:04.252 -----------------------------------------------
+!SESSION 2024-03-27 11:37:59.208 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=17.0.7
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
-Command-line arguments:  -data /tmp/mg/ -os linux -ws gtk -arch x86_64
+Command-line arguments:  -os linux -ws gtk -arch x86_64
 
-!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-26 15:48:06.638
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-27 11:38:05.461
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:607)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+!SESSION 2024-03-27 11:45:49.585 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -data /home/py/wrk/iotc/iotc-evse-example/nxpev1060mg -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-27 11:45:52.655
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:607)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+!SESSION 2024-03-27 12:29:06.380 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -data /home/py/wrk/iotc/iotc-evse-example/nxpev1060mg -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-03-27 12:29:09.878
 !MESSAGE /css/gef_dark.css
 !STACK 0
 java.io.FileNotFoundException: /css/gef_dark.css
@@ -130,42 +202,17 @@ java.io.FileNotFoundException: /css/gef_dark.css
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
 
-!ENTRY org.eclipse.cdt.core 1 0 2024-03-26 15:49:56.976
-!MESSAGE Indexed 'RT1060_EasyEVSE_V2' (321 sources, 874 headers) in 9.68 sec: 104,899 declarations; 409,386 references; 36 unresolved inclusions; 188 syntax errors; 1,118 unresolved names (0.22%)
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-27 12:30:25.361
+!MESSAGE Indexed 'RT1060_EasyEVSE_V2' (321 sources, 878 headers) in 14 sec: 104,815 declarations; 404,755 references; 46 unresolved inclusions; 245 syntax errors; 4,484 unresolved names (0.87%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2024-03-26 15:49:59.074
-!MESSAGE Indexed 'evkmimxrt1060_netxduo_lib_V2' (370 sources, 639 headers) in 2.03 sec: 26,205 declarations; 140,719 references; 0 unresolved inclusions; 0 syntax errors; 60 unresolved names (0.036%)
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-27 12:30:45.259
+!MESSAGE Indexed 'evkmimxrt1060_netxduo_lib_V2' (370 sources, 639 headers) in 3.87 sec: 26,205 declarations; 140,720 references; 0 unresolved inclusions; 0 syntax errors; 60 unresolved names (0.036%)
 
-!ENTRY com.crt.log 1 0 2024-03-26 16:03:26.168
-!MESSAGE Trying to connect to redlink server on port 3025.
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-27 12:45:56.754
+!MESSAGE Indexed 'RT1060_EasyEVSE_V2' (321 sources, 882 headers) in 9.11 sec: 104,898 declarations; 409,487 references; 38 unresolved inclusions; 175 syntax errors; 1,122 unresolved names (0.22%)
 
-!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2024-03-26 16:03:27.172
-!MESSAGE RedlinkServer telnet session connected on port 3025->46602 @ 127.0.0.1
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-27 12:48:51.181
+!MESSAGE Indexed 'RT1060_EasyEVSE_V2' (321 sources, 882 headers) in 10.6 sec: 104,684 declarations; 409,621 references; 38 unresolved inclusions; 175 syntax errors; 1,185 unresolved names (0.23%)
 
-!ENTRY com.crt.log 1 0 2024-03-26 16:03:36.738
-!MESSAGE Starting GDB server [ /usr/local/LinkServer_1.4.85/binaries/crt_emu_cm_redlink, --server, :10989, -msg-port=40001, -g, -mi, -2, -pMIMXRT1062xxxxA, -vendor=NXP, --connectscript=RT1060_connect.scp, --reset=, -ProbeHandle=1, -CoreIndex=0, -cache=disable, --flash-hashing, --flash-driver=, -x, /tmp/mg/RT1060_EasyEVSE/RT1060_EasyEVSE_V2/Debug, --flash-dir, /usr/local/LinkServer_1.4.85/binaries/Flash, --flash-dir, /tmp/mg/.mcuxpressoide_packages_support/MIMXRT1062xxxxA_support/Flash, --telnet, 3330, --no-packed ]
-
-!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2024-03-26 16:03:37.754
-!MESSAGE Telnet session connected on port 3330->53536 @ 127.0.0.1
-
-!ENTRY com.crt.log 1 0 2024-03-26 16:07:57.641
-!MESSAGE Trying to connect to redlink server on port 3025.
-
-!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2024-03-26 16:07:57.649
-!MESSAGE RedlinkServer telnet session connected on port 3025->47252 @ 127.0.0.1
-
-!ENTRY com.crt.log 1 0 2024-03-26 16:08:02.733
-!MESSAGE Starting GDB server [ /usr/local/LinkServer_1.4.85/binaries/crt_emu_cm_redlink, --server, :10989, -msg-port=36939, -g, -mi, -2, -pMIMXRT1062xxxxA, -vendor=NXP, --connectscript=RT1060_connect.scp, --reset=, -ProbeHandle=1, -CoreIndex=0, -cache=disable, --flash-hashing, --flash-driver=, -x, /tmp/mg/RT1060_EasyEVSE/RT1060_EasyEVSE_V2/Debug, --flash-dir, /usr/local/LinkServer_1.4.85/binaries/Flash, --flash-dir, /tmp/mg/.mcuxpressoide_packages_support/MIMXRT1062xxxxA_support/Flash, --telnet, 3330, --no-packed ]
-
-!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2024-03-26 16:08:03.743
-!MESSAGE Telnet session connected on port 3330->48048 @ 127.0.0.1
-
-!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2024-03-26 16:41:00.434
-!MESSAGE Failed to execute MI command:
--data-list-register-values x 92
-Error message from debugger back end:
-Invalid thread id: 1
-!STACK 0
-java.lang.Exception: Invalid thread id: 1
-	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
-	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-27 12:49:24.874
+!MESSAGE Indexed 'RT1060_EasyEVSE_V2' (321 sources, 882 headers) in 8.29 sec: 104,684 declarations; 409,621 references; 38 unresolved inclusions; 175 syntax errors; 1,185 unresolved names (0.23%)
