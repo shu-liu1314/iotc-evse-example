@@ -32,6 +32,8 @@ extern   "C" {
 #include "EVSE_config_mg.h"
 #elif defined IOTC_DEVICE_PY
 #include "EVSE_config_py.h"
+#else
+#include "EVSE_config_iotc_evse.h"
 #endif
 
 

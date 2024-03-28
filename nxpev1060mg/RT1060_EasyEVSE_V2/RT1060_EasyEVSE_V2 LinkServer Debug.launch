@@ -5,7 +5,7 @@
     <booleanAttribute key="boot.config.enable" value="false"/>
     <stringAttribute key="boot.configuration.control" value=""/>
     <stringAttribute key="bootrom.stall" value=""/>
-    <stringAttribute key="com.crt.ctrlcenter.OFSemuDetails" value="LinkServer"/>
+    <stringAttribute key="com.crt.ctrlcenter.OFSemuDetails" value="LinkServer0229000027e019f500000000000000000000000097969905"/>
     <booleanAttribute key="com.crt.ctrlcenter.crtInit" value="true"/>
     <stringAttribute key="com.crt.ctrlcenter.currentWireType" value="SWD"/>
     <booleanAttribute key="com.crt.ctrlcenter.mainBreakIsHardware" value="true"/>
