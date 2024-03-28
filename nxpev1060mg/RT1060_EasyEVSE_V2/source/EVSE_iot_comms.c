@@ -23,6 +23,7 @@
 
 #include <EVSE_config.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "azure/core/az_json.h"
 #include "nx_api.h"
@@ -40,6 +41,8 @@
 #include <phApp_Init.h>
 #include "phOsal.h"
 
+ // Format of IoT-Connect timestamps
+#define IOTCL_ISO_TIMESTAMP_FORMAT 				"%Y-%m-%dT%H:%M:%S.000Z"
 
 #ifndef SAMPLE_MAX_EXPONENTIAL_BACKOFF_IN_SEC
 #define SAMPLE_MAX_EXPONENTIAL_BACKOFF_IN_SEC                           (10 * 60)
@@ -230,20 +233,17 @@ static const az_span Tariff_response_description = AZ_SPAN_LITERAL_FROM_STR("suc
 static const az_span tariffcost_response_description = AZ_SPAN_LITERAL_FROM_STR("success");
 
 /* Device data */
-static UCHAR scratch_buffer[256];
+static UCHAR scratch_buffer[768];
 uint32_t Temperature = 25;            	 /* EVSE local temperature */
 uint32_t GridPowerLimit = 32;         	 /* Grid controlled max power to deliver */
 uint32_t desired_gridPowerLimit = 32;
 float TariffCost = 0.10;         	     /* Energy Cost per KWh */
 float desired_TariffCost = 0.10;
 char ChargeStatus[2] = "D";     	     /* Charge state moves from A to D for charging and E..F for errors */
-az_span Statestr;
 int updateReportedProperties = 0;
 uint32_t EvseRating = 16;             	 /* Current rating of charging point in Amps*/
 char EvseId[9] = "10071856";             /* charging station SN as Hex string */
-az_span Evsestr;
 char VehicleId[20] = "14031879";         /* Id of vehicle read from tag */
-az_span Vehiclestr;
 float ChargeCost = 2.25;         	     /* current charge cost based on charging rate x tariff cost */
 uint32_t Battery = 50;               	 /* Vehicle battery level as % */
 uint32_t batterycapacity = 48;			 /* Vehicle battery capacity read from tag read in kW */
@@ -261,8 +261,10 @@ char EVSE_State[7] = "STATEA";           /* Status of charging sequence at Meter
 float firmwareV = 1.0;                   /* rt1064 firmware version number */
 static int gpl_property_version;
 bool vehicleauthentic = true; 	         /* Vehicle authentication status */
-az_span Authstr;
+char *vehicleauthenticstr;
 static char outstring[12] = "00H:00M:00S"; /* time remaining in iso 8601 format */
+static char timestr[48];				/* Timestamp in iso "YYYY-MM-DDTHH:MM:SS.SSSZ" format */
+
 az_span  str2send;                       /* need record address and size of outstring in correct format */
 uint32_t firstMsg = 1;                   /* Set to 1 for sending initial telemetry, set to 0 for sending remainder of telemetry */
 static TX_THREAD thread_request;
@@ -512,7 +514,6 @@ void meter_refresh_entry(ULONG thread_input)
       	                 strcpy(ChargeStatus, "Z");
       	                 break;
       	             }
-  	                 Statestr = az_span_create_from_str(ChargeStatus);
   	                 Update_EVSE_Values();
       	            }
       	        ptr = ptr + 3;
@@ -904,7 +905,6 @@ static UINT sample_terminate_charging(NX_PACKET *packet_ptr, UCHAR *buffer, UINT
         az_result_succeeded(az_json_writer_append_end_object(&json_builder)))
     {
     	strcpy (ChargeStatus, "A");
-    	Statestr = az_span_create_from_str(ChargeStatus);
     	strcpy (EVSE_State, "STATEA");
     	/* send command to Meter board */
     	LPUART_WriteByte(METER_LPUART, command_state);
@@ -1517,7 +1517,6 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
 {
     UINT status = 0;
     NX_PACKET *packet_ptr;
-    az_json_writer json_builder;
     UINT buffer_length;
 
     PRINTF(" \r\n *** sample_telemetry_action *** \r\n");
@@ -1535,20 +1534,29 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
         return;
     }
 
+    time_t timestamp = time(NULL);
+    size_t tsz = strftime(timestr, 40, IOTCL_ISO_TIMESTAMP_FORMAT, gmtime(&timestamp));
+
+    PRINTF("timestamp=%d\r\n", (int)timestamp);
+
+    if (tsz == 0) {
+    	PRINTF("tsz is 0\r\n");
+    	timestr[0] = '\0';
+    }
+
+    PRINTF("timestr: %s\r\n", timestr);
+
     /* Build telemetry JSON payload */
     if (firstMsg != 0)
     {
-    	Statestr = az_span_create_from_str(ChargeStatus);
-    	Evsestr = az_span_create_from_str(EvseId);
-    	Vehiclestr = az_span_create_from_str(VehicleId);
     	time_remaining = 150;
     	if (vehicleauthentic)
     	 {
-    		Authstr = az_span_create_from_str("PASS");
+    		vehicleauthenticstr = "PASS";
     	 }
     	else
     	 {
-    		Authstr = az_span_create_from_str("FAIL");
+    		vehicleauthenticstr = "FAIL";
     	 }
 
         /* Only transmit Fist time on connect */
@@ -1557,9 +1565,11 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
 					"{"
 						"\"mt\":0,"
 						"\"tg\":\"\","
-						"\"d\":[{"
+        				"\"dt\":\"%s\","
+        				"\"d\":[{"
 							"\"id\":\"%s\","
 							"\"d\":{"
+        						"\"dt\":\"%s\","
 								"\"evseid\":\"%s\","
 								"\"battery\":%d,"
 								"\"evseLimit\":%d,"
@@ -1571,19 +1581,17 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
 						"}]"
 					"}";
 
-      	snprintf(scratch_buffer, sizeof scratch_buffer, telemetry_first_msg_fmt,
-      			DEVICE_ID,
-      			Evsestr,
-			Battery,
-			EvseRating,
-			Statestr,
-			Vehiclestr,
-			Authstr,
-			batterycapacity);
-
-		PRINTF("Telemetry message failed to build intial message\r\n");
-		nx_azure_iot_hub_client_telemetry_message_delete(packet_ptr);
-		return;
+        snprintf(scratch_buffer, sizeof scratch_buffer, telemetry_first_msg_fmt,
+      			timestr,
+        		DEVICE_ID,
+				timestr,
+				EvseId,
+				Battery,
+				EvseRating,
+				ChargeStatus,
+				VehicleId,
+				vehicleauthenticstr,
+				batterycapacity);
     }
     else
     {
@@ -1594,14 +1602,15 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
       	convert_time_remaining();
       	chargingrate = kwh;
       	ChargeCost = (TariffCost * chargingrate) /1000;
-      	Statestr = az_span_create_from_str(ChargeStatus);
 
 		const char *telemetry_fmt =
 					"{"
 						"\"mt\":0,"
 						"\"tg\":\"\","
+						"\"dt\":\"%s\","
 						"\"d\":[{"
 							"\"id\":\"%s\","
+							"\"dt\":\"%s\","
 							"\"d\":{"
 								"\"evseLimit\":%d,"
 								"\"battery\":%d,"
@@ -1618,14 +1627,16 @@ static void sample_telemetry_action(SAMPLE_CONTEXT *context, UINT firstMsg)
 					"}";
 
       	snprintf(scratch_buffer, sizeof scratch_buffer, telemetry_fmt,
+      			timestr,
       			DEVICE_ID,
+				timestr,
       			EvseRating,
 				Battery,
 				irms,
 				vrms,
 				kwh,
 				Temperature,
-				Statestr,
+				ChargeStatus,
 				chargingrate,
 				ChargeCost,
 				str2send
