@@ -41,6 +41,8 @@
 
 #include "se05x_sample.h"
 
+#include "azrtos_time.h"
+
 
 /*******************************************************************************
  * Definitions
@@ -195,8 +197,8 @@ static void dhcp_wait();
 #endif /* SAMPLE_DHCP_DISABLE */
 
 static UINT dns_create();
-static UINT sntp_time_sync();
-static UINT unix_time_get(ULONG *unix_time);
+// static UINT sntp_time_sync();
+// static UINT unix_time_get(ULONG *unix_time);
 
 /* Include the platform IP driver. */
 VOID  nx_driver_imx(NX_IP_DRIVER *driver_req_ptr);
@@ -304,7 +306,7 @@ void    tx_application_define(void *first_unused_memory)
     PRINTF("\033[0m");
     guix_tx_application_define(NULL);
 
-#if (CLEV663_ENABLE == 1)
+#if (CLEV663_ENABLE == 2)
     PRINTF("\033[0;32m");
     PRINTF("Starting NFC Reader in Polling Mode...\r\n");
     PRINTF("\033[0m");
@@ -438,7 +440,7 @@ void sample_helper_thread_entry(ULONG parameter)
     PRINTF("\033[0;32m");
     PRINTF("Starting Comms to SE050...\r\n");
     PRINTF("\033[0m");
-	SE05x_Init();
+    SE05x_Init();
 	/* NetX Duo: Register Debug Printf function */
     se05x_nx_debug_printf_init(PRINTF);
     /* NetX Duo: egister NXP SE05x Secure Element Get Random function */
@@ -450,7 +452,7 @@ void sample_helper_thread_entry(ULONG parameter)
     /* Check status.  */
     if (status != TX_SUCCESS)
     {
-    	PRINTF("Could not release Mutex during sample helper /r/n");
+      PRINTF("Could not release Mutex during sample helper /r/n");
     }
 
 
@@ -496,7 +498,7 @@ void sample_helper_thread_entry(ULONG parameter)
     {
 
         /* Start SNTP to sync the local time.  */
-        status = sntp_time_sync();
+        status = sntp_time_sync(&ip_0, &pool_0, &dns_0, SAMPLE_SNTP_SERVER_NAME);
 
         /* Check status.  */
         if(status == NX_SUCCESS)
@@ -597,133 +599,3 @@ static UINT dns_create()
     return(NX_SUCCESS);
 }
 
-/* Sync up the local time.  */
-static UINT sntp_time_sync()
-{
-
-    UINT    status;
-    UINT    server_status;
-    ULONG   sntp_server_address;
-    UINT    i;
-
-
-    PRINTF("SNTP Time Sync...\r\n");
-
-#ifndef SAMPLE_SNTP_SERVER_ADDRESS
-    /* Look up SNTP Server address. */
-    status = nx_dns_host_by_name_get(&dns_0, (UCHAR *)SAMPLE_SNTP_SERVER_NAME, &sntp_server_address, 5 * NX_IP_PERIODIC_RATE);
-
-    /* Check status.  */
-    if (status)
-    {
-        return(status);
-    }
-#else /* !SAMPLE_SNTP_SERVER_ADDRESS */
-    sntp_server_address = SAMPLE_SNTP_SERVER_ADDRESS;
-#endif /* SAMPLE_SNTP_SERVER_ADDRESS */
-
-    /* Create the SNTP Client to run in broadcast mode.. */
-    status =  nx_sntp_client_create(&sntp_client, &ip_0, 0, &pool_0,  
-                                    NX_NULL,
-                                    NX_NULL,
-                                    NX_NULL /* no random_number_generator callback */);
-
-    /* Check status.  */
-    if (status)
-    {
-        return(status);
-    }
-
-    /* Use the IPv4 service to initialize the Client and set the IPv4 SNTP server. */
-    status = nx_sntp_client_initialize_unicast(&sntp_client, sntp_server_address);
-
-    /* Check status.  */
-    if (status)
-    {
-        nx_sntp_client_delete(&sntp_client);
-        return(status);
-    }
-
-    /* Set local time to 0 */
-    status = nx_sntp_client_set_local_time(&sntp_client, 0, 0);
-
-    /* Check status.  */
-    if (status)
-    {
-        nx_sntp_client_delete(&sntp_client);
-        return(status);
-    }
-
-    /* Run Unicast client */
-    status = nx_sntp_client_run_unicast(&sntp_client);
-
-    /* Check status.  */
-    if (status)
-    {
-        nx_sntp_client_stop(&sntp_client);
-        nx_sntp_client_delete(&sntp_client);
-        return(status);
-    }
-
-    /* Wait till updates are received */
-    for (i = 0; i < SAMPLE_SNTP_UPDATE_MAX; i++)
-    {
-
-        /* First verify we have a valid SNTP service running. */
-        status = nx_sntp_client_receiving_updates(&sntp_client, &server_status);
-
-        /* Check status.  */
-        if ((status == NX_SUCCESS) && (server_status == NX_TRUE))
-        {
-
-            /* Server status is good. Now get the Client local time. */
-            ULONG sntp_seconds, sntp_fraction;
-            ULONG system_time_in_second;
-
-            /* Get the local time.  */
-            status = nx_sntp_client_get_local_time(&sntp_client, &sntp_seconds, &sntp_fraction, NX_NULL);
-
-            /* Check status.  */
-            if (status != NX_SUCCESS)
-            {
-                continue;
-            }
-
-            /* Get the system time in second.  */
-            system_time_in_second = tx_time_get() / TX_TIMER_TICKS_PER_SECOND;
-
-            /* Convert to Unix epoch and minus the current system time.  */
-            unix_time_base = (sntp_seconds - (system_time_in_second + SAMPLE_UNIX_TO_NTP_EPOCH_SECOND));
-
-            /* Time sync successfully.  */
-
-            /* Stop and delete SNTP.  */
-            nx_sntp_client_stop(&sntp_client);
-            nx_sntp_client_delete(&sntp_client);
-
-            return(NX_SUCCESS);
-        }
-
-        /* Sleep.  */
-        tx_thread_sleep(SAMPLE_SNTP_UPDATE_INTERVAL);
-    }
-
-    /* Time sync failed.  */
-
-    /* Stop and delete SNTP.  */
-    nx_sntp_client_stop(&sntp_client);
-    nx_sntp_client_delete(&sntp_client);
-
-    /* Return success.  */
-    return(NX_NOT_SUCCESSFUL);
-}
-
-static UINT unix_time_get(ULONG *unix_time)
-{
-
-    /* Using time() to get unix time on x86.
-       Note: User needs to implement own time function to get the real time on device, such as: SNTP.  */
-    *unix_time = unix_time_base + (tx_time_get() / TX_TIMER_TICKS_PER_SECOND);
-
-    return(NX_SUCCESS);
-}
